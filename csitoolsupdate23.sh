@@ -10,6 +10,21 @@ rm csi* > /dev/null 2>&1
 echo "Downloading CSI Tools"
 wget https://csilinux.com/downloads/csitools22.zip -O csitools22.zip
 
+# Add Repos
+
+wget apt-vulns-sexy.list  
+danielrichter2007-ubuntu-grub-customizer-jammy.list  
+google-chrome.list		    
+i2p-maintainers-ubuntu-i2p-jammy.list  
+oxen.list
+bellsoft.list	     
+element-io.list					  
+hamishmb-ubuntu-myppa-jammy.list  
+kismet.list				   
+wine.list
+
+
+
 echo "# Installing CSI Tools"
 echo $key | sudo -S unzip -o -d / csitools22.zip
 echo $key | sudo -S chown osint:osint -R /opt/csitools 
