@@ -12,16 +12,16 @@ wget https://csilinux.com/downloads/csitools22.zip -O csitools22.zip
 
 echo "# Installing CSI Tools"
 echo $key | sudo -S unzip -o -d / csitools22.zip
-echo $key | sudo -S chown csi:csi -R /opt/csitools 
+echo $key | sudo -S chown osint:osint -R /opt/csitools 
 echo $key | sudo -S chmod +x /opt/csitools/* -R
 echo $key | sudo -S chmod +x /opt/csitools/*
 echo $key | sudo -S chmod +x ~/Desktop/*.desktop
-echo $key | sudo -S chown csi:csi /usr/bin/bash-wrapper
-echo $key | sudo -S chown csi:csi /home/csi -R
+echo $key | sudo -S chown osint:osint /usr/bin/bash-wrapper
+echo $key | sudo -S chown osint:osint /home/osint -R
 echo $key | sudo -S chmod +x /usr/bin/bash-wrapper 
 echo $key | sudo -S mkdir /iso
-echo $key | sudo -S chown csi:csi /iso -R
-tar -xf /opt/csitools/assets/Win11-blue.tar.xz --directory /home/csi/.icons/
+echo $key | sudo -S chown osint:osint /iso -R
+tar -xf /opt/csitools/assets/Win11-blue.tar.xz --directory /home/osint/.icons/
 
 echo $key | sudo -S /bin/sed -i 's/http\:\/\/in./http\:\/\//g' /etc/apt/sources.list
 echo $key | sudo -S echo "\$nrconf{restart} = 'a'" | sudo -S tee /etc/needrestart/conf.d/autorestart.conf > /dev/null
@@ -141,7 +141,7 @@ echo $key | sudo -S dpkg --configure -a --force-confold
 echo "# Removing old software APT installs"
 echo $key | sudo -S apt autoremove -y
 echo "# Removing APT cache to save space"
-echo $key | sudo -S chown csi:csi /opt
+echo $key | sudo -S chown osint:osint /opt
 
 # unredactedmagazine
 
